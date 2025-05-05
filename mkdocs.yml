@@ -1,4 +1,87 @@
-site_name: NAI Workshop
-site_url: https://mydomain.org/mysite
+site_name: "Empowering Infrastructure Teams with GenAI: A Hands-On Nutanix Workshop"
+site_url: https://lab-guide.ntnx.pro/
+site_description: "Learn the fundamentals of GenAI and build practical AI applications on Nutanix infrastructure"
+site_author: "Nutanix AI Team"
+
+# Repository
+repo_name: nai-workshop
+repo_url: https://github.com/halsayed/nai-workshop
+
+# Copyright
+copyright: "Copyright &copy; 2025"
+
+# Configuration
 theme:
   name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+# Plugins
+plugins:
+  - search
+  - mkdocstrings
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - Home: index.md
+  - Workshop Overview: overview.md
+  - Sessions:
+    - "1. Welcome & Introduction": 
+      - Overview: sessions/welcome/index.md
+      - "Lab: Connecting to HPOC": sessions/welcome/lab-connect.md
+    - "2. Introduction to LLMs and GenAI": 
+      - Overview: sessions/fundamentals/index.md
+      - "Lab: Intro to Prompting & Context": sessions/fundamentals/lab-prompting.md
+    - "3. Deploy LLM using Nutanix NAI": 
+      - Overview: sessions/deployment/index.md
+      - "Lab: Deploy NAI on NKP": sessions/deployment/lab-deploy.md
+    - "4. Building Your First Chatbot": 
+      - Overview: sessions/chatbot/index.md
+      - "Lab: Deploying AnythingLLM": sessions/chatbot/lab-anything-llm.md
+    - "5. Leveraging NAI for Infra Ops": 
+      - Overview: sessions/infraops/index.md
+      - "Lab: VS Code AI Extensions": sessions/infraops/lab-vscode.md
+    - "6. Low-Code/No-Code AI Workflows": 
+      - Overview: sessions/workflows/index.md
+      - "Lab: Building Automated Workflows": sessions/workflows/lab-automation.md
+  - Conclusion & Next Steps: conclusion.md
+  - Resources: resources.md
